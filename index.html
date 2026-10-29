@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musician Gig Calculator</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #222;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+         
+        main{
+            background: white;
+            padding: 25px; 
+            border-radius: 12px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            border: 0;
+            border-radius: 6px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            min-height: 70px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 8px;
+            overflow-wrap: anywhere;
+
+        }
+
+        #resultado:empty {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Music Gig Calculator</h1>
+        <p>Calculate how much to charge for a gig.</p>
+
+        <form id="calculadora">
+            <label for="numMusicos">Number of musicians</label>
+            <input id="numMusicos" type="number" min="1" step="1" required>
+
+            <label for="horasEvento">Event duration (hours)</label>
+            <input id="horasEvento" type="number" min="0.01" step="any" required>
+
+            <label for="tarifaHora">Hourly rate per musician ($)</label>
+            <input id="tarifaHora" type="number" min="0" step="any" required>
+
+            <label for="transporte">Transportation costs ($)</label>
+            <input id="transporte" type="number" min="0" step="any" value="0" required>
+
+            <label for="otrosGastos">Other expenses($)</label>
+            <input id="otrosGastos" type="number" min="0" step="any" value="0" required>
+
+            <label for="gananciaDeseada">Markup (%)</label>
+            <input id="gananciaDeseada" type="number" min="0" step="any" value="20" required>
+
+            <button type="submit">Calculate price</button>
+        </form>
+
+        <section id="resultado" aria-live="polite"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+ 
+
+    
+
+
+
